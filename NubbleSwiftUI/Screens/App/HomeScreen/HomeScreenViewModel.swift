@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  HomeScreenViewModel.swift
 //  NubbleSwiftUI
 //
 //  Created by Willian Peres on 05/05/24.
@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class HomeViewModel {
+class HomeScreenViewModel {
     private let postService: PostService
     var posts: [PostModel] = []
     

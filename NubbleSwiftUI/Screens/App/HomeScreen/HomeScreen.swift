@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  HomeScreen.swift
 //  NubbleSwiftUI
 //
 //  Created by Willian Peres on 05/05/24.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    @State private var viewModel = HomeViewModel(postService: PostService())
+struct HomeScreen: View {
+    @State private var viewModel = HomeScreenViewModel(postService: PostService())
     
     var body: some View {
         VStack {
