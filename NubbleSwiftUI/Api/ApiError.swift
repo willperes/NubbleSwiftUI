@@ -8,17 +8,20 @@
 import Foundation
 
 enum ApiError: Error {
-   case invalidPath
-   case decoding
+    case invalidPath
+    case invalidUrl
+    case decoding
 }
 
 extension ApiError {
-   var localizedDescription: String {
-      switch self {
-      case .invalidPath:
-         return "Invalid Path"
-      case .decoding:
-         return "There was an error decoding the type"
-      }
-   }
+    var localizedDescription: String {
+        switch self {
+        case .invalidPath:
+            return "Invalid Path"
+        case .invalidUrl:
+            return "Invalid URL"
+        case .decoding:
+            return "There was an error decoding the type"
+        }
+    }
 }

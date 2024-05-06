@@ -38,16 +38,20 @@ private extension ApiManager {
     func createRequest(from endpoint: ApiEndpoint) throws -> URLRequest {
         guard
             let urlPath = URL(string: baseURL.appending(endpoint.path)),
-            var urlComponents = URLComponents(string: urlPath.path)
+            var urlComponents = URLComponents(url: urlPath, resolvingAgainstBaseURL: true)
         else {
             throw ApiError.invalidPath
         }
         
         if let parameters = endpoint.parameters {
-            urlComponents.queryItems = parameters
+            urlComponents.queryItems = parameters.map { URLQueryItem(name: $0.name, value: String($0.value ?? "")) }
         }
         
-        var request = URLRequest(url: urlPath)
+        guard let url = urlComponents.url else {
+            throw ApiError.invalidUrl
+        }
+        
+        var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(accessToken, forHTTPHeaderField: "Authorization")

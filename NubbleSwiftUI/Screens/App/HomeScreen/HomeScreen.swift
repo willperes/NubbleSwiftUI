@@ -12,12 +12,12 @@ struct HomeScreen: View {
     
     var body: some View {
         List {
-            ForEach(viewModel.posts.indices, id: \.self) { i in
-                PostItemView(post: viewModel.posts[i])
+            ForEach(viewModel.data.indices, id: \.self) { i in
+                PostItemView(post: viewModel.data[i])
                     .padding(.vertical, 14)
                     .listRowInsets(EdgeInsets())
                     .onAppear {
-                        print(i)
+                        viewModel.shouldFetchMore(index: i)
                     }
             }
         }
@@ -30,13 +30,5 @@ struct HomeScreen: View {
         .listStyle(.plain)
         .navigationTitle("Posts")
         .navigationBarBackButtonHidden()
-        .onAppear {
-            Task {
-                await viewModel.loadPosts()
-            }
-        }
-        .onTapGesture {
-            //
-        }
     }
 }
