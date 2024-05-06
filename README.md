@@ -32,6 +32,9 @@ This project was developed using SwiftUI using the DDD (Domain-driven Design) ap
 ├── Models                  # Shared models to be used throughout the app
 ├── Screens                 # Views that represent the app's screens
 │   ├── App                 # Screens to be used only when the user is authenticated
+│   │   └── (Screen)
+│   │       ├── (Screen)
+│   │       └── (ScreenViewModel)
 │   └── Auth                # Screens to be used only when the user is not authenticated
 ├── Utils                   # Utility classes and functions to be used throughout the app
 └── Views                   # Views that can be reused throughout the app
