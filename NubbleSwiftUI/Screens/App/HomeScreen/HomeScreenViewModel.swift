@@ -8,10 +8,7 @@
 import SwiftUI
 
 class HomeScreenViewModel: ObservableObject {
-    private let postService = PostService()
-    
-    private var page = 1
-    private var hasNextPage = true
+    private let useCase = PostListUseCase()
     
     @Published var data: [PostModel] = []
     @Published var isLoading = true
@@ -25,9 +22,10 @@ class HomeScreenViewModel: ObservableObject {
     }
     
     func shouldFetchMore(index: Int) {
+        print("\(index) \(data.count - 1)")
         if index == data.count - 1 {
             Task {
-                await fetchNextPage()
+                await fetchMoreData()
             }
         }
     }
@@ -37,44 +35,36 @@ class HomeScreenViewModel: ObservableObject {
         isLoading = true
         isError = false
         
-        do {
-            let response = try await postService.getList(page: page)
-            data = response.data
-            
-            if response.meta.hasNextPage {
-                page = 2
-            } else {
-                hasNextPage = false
+        await useCase.fetchInitialData { data, skipped, error in
+            guard let postListData = data else {
+                self.isError = skipped != true
+                self.isLoading = false
+                return
             }
-        } catch {
-            isError = true
+            
+            self.data = postListData
+            self.isLoading = false
+            self.isError = false
         }
-        
-        isLoading = false
     }
     
     @MainActor
-    func fetchNextPage() async {
-        if isFetchingMore || !hasNextPage {
-            return
-        }
+    func fetchMoreData() async {
+        let oldIsFetchingMoreValue = isFetchingMore
         
         isFetchingMore = true
         isError = false
         
-        do {
-            let response = try await postService.getList(page: page)
-            data.append(contentsOf: response.data)
-            
-            if response.meta.hasNextPage {
-                page = page + 1
-            } else {
-                hasNextPage = false
+        await useCase.fetchMoreData(oldIsFetchingMoreValue) { additionalData, skipped, error in
+            guard let postListData = additionalData else {
+                self.isError = skipped != true
+                self.isFetchingMore = false
+                return
             }
-        } catch {
-            isError = true
+            
+            self.data.append(contentsOf: postListData)
+            self.isFetchingMore = false
+            self.isError = false
         }
-        
-        isFetchingMore = false
     }
 }
