@@ -7,16 +7,20 @@
 
 import Foundation
 
-@Observable
-class HomeScreenViewModel {
+class HomeScreenViewModel: ObservableObject {
     private let postService: PostService
-    var posts: [PostModel] = []
+    
+    @Published var isLoading = true
+    @Published var posts: [PostModel] = []
     
     init(postService: PostService = PostService()) {
         self.postService = postService
     }
     
+    @MainActor
     func loadPosts() async {
+        isLoading = true
+        
         do {
             let response = try await postService.getList(page: 0)
             print(response.data)
@@ -25,5 +29,7 @@ class HomeScreenViewModel {
             print("Error while loading posts")
             print(error.localizedDescription)
         }
+        
+        isLoading = false
     }
 }

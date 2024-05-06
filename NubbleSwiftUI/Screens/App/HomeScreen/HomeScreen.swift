@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @State private var viewModel = HomeScreenViewModel()
+    @StateObject var viewModel = HomeScreenViewModel()
     
     var body: some View {
-        ScrollView {
-            ForEach(viewModel.posts) { post in
-                PostItemView(post: post)
+        List {
+            ForEach(viewModel.posts.indices, id: \.self) { i in
+                PostItemView(post: viewModel.posts[i])
                     .padding(.vertical, 14)
+                    .listRowInsets(EdgeInsets())
+                    .onAppear {
+                        print(i)
+                    }
             }
         }
-        
+        .overlay {
+            if viewModel.isLoading {
+                ProgressView()
+                    .controlSize(.large)
+            }
+        }
+        .listStyle(.plain)
         .navigationTitle("Posts")
         .navigationBarBackButtonHidden()
         .onAppear {
