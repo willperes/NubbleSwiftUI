@@ -29,6 +29,9 @@
 		3A7F31B62BE84C3B007D9209 /* PostItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F31B52BE84C3B007D9209 /* PostItemView.swift */; };
 		3AC0DA002BE84FEB0001D9E3 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0D9FF2BE84FEB0001D9E3 /* RemoteImage.swift */; };
 		3AC0DA032BE851140001D9E3 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0DA022BE851140001D9E3 /* ImageCache.swift */; };
+		3AC0DA062BE865640001D9E3 /* PostItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0DA052BE865640001D9E3 /* PostItemHeaderView.swift */; };
+		3AC0DA082BE866500001D9E3 /* PostActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0DA072BE866500001D9E3 /* PostActionsView.swift */; };
+		3AC0DA0A2BE867360001D9E3 /* PostBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0DA092BE867360001D9E3 /* PostBottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		3A7F31B52BE84C3B007D9209 /* PostItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemView.swift; sourceTree = "<group>"; };
 		3AC0D9FF2BE84FEB0001D9E3 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		3AC0DA022BE851140001D9E3 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		3AC0DA052BE865640001D9E3 /* PostItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemHeaderView.swift; sourceTree = "<group>"; };
+		3AC0DA072BE866500001D9E3 /* PostActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionsView.swift; sourceTree = "<group>"; };
+		3AC0DA092BE867360001D9E3 /* PostBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +117,9 @@
 		3A7F31882BE8487D007D9209 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				3A7F318B2BE8487D007D9209 /* Models */,
 				3A7F31892BE8487D007D9209 /* ApiError.swift */,
 				3A7F318A2BE8487D007D9209 /* ApiManager.swift */,
-				3A7F318B2BE8487D007D9209 /* Models */,
 				3A7F318E2BE8487D007D9209 /* ApiAdapter.swift */,
 				3A7F318F2BE8487D007D9209 /* ApiEndpoint.swift */,
 			);
@@ -220,6 +226,7 @@
 		3A7F31B42BE84B58007D9209 /* PostItemView */ = {
 			isa = PBXGroup;
 			children = (
+				3AC0DA042BE865590001D9E3 /* Components */,
 				3A7F31B52BE84C3B007D9209 /* PostItemView.swift */,
 			);
 			path = PostItemView;
@@ -239,6 +246,16 @@
 				3AC0DA022BE851140001D9E3 /* ImageCache.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		3AC0DA042BE865590001D9E3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3AC0DA052BE865640001D9E3 /* PostItemHeaderView.swift */,
+				3AC0DA072BE866500001D9E3 /* PostActionsView.swift */,
+				3AC0DA092BE867360001D9E3 /* PostBottomView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +329,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7F31A42BE8487D007D9209 /* ApiManager.swift in Sources */,
+				3AC0DA0A2BE867360001D9E3 /* PostBottomView.swift in Sources */,
 				3A7F317B2BE84812007D9209 /* NubbleSwiftUIApp.swift in Sources */,
+				3AC0DA082BE866500001D9E3 /* PostActionsView.swift in Sources */,
 				3A7F31B02BE8487D007D9209 /* HomeScreenViewModel.swift in Sources */,
 				3A7F31AC2BE8487D007D9209 /* PostResponseApi.swift in Sources */,
 				3A7F31B12BE8487D007D9209 /* HomeScreen.swift in Sources */,
@@ -321,6 +340,7 @@
 				3A7F31A32BE8487D007D9209 /* ApiError.swift in Sources */,
 				3A7F31B62BE84C3B007D9209 /* PostItemView.swift in Sources */,
 				3A7F31A52BE8487D007D9209 /* PageParamsModel.swift in Sources */,
+				3AC0DA062BE865640001D9E3 /* PostItemHeaderView.swift in Sources */,
 				3AC0DA032BE851140001D9E3 /* ImageCache.swift in Sources */,
 				3A7F31AF2BE8487D007D9209 /* UserApiModel.swift in Sources */,
 				3A7F31A62BE8487D007D9209 /* PageApiModel.swift in Sources */,
