@@ -8,7 +8,7 @@
 import Foundation
 
 internal class PostApi {
-    func getList(for pageParams: PageParamsModel?) async throws -> PageApiModel<PostApiModel> {
+    func getList(_ pageParams: PageParamsModel?) async throws -> PageApiModel<PostApiModel> {
         var parameters: [URLQueryItem]?
         
         if let page = pageParams?.page, let per_page = pageParams?.per_page {

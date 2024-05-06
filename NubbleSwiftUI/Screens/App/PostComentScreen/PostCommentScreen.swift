@@ -9,10 +9,19 @@ import SwiftUI
 
 struct PostCommentScreen: View {
     let postId: Int
+    @StateObject var viewModel: PostCommentScreenViewModel
+    
+    init(postId: Int) {
+        self.postId = postId
+        _viewModel = StateObject(wrappedValue: PostCommentScreenViewModel(postId: postId))
+    }
     
     var body: some View {
-        VStack {
-            Text("Post: \(postId)")
+        List {
+            ForEach(viewModel.data) { data in
+                Text(data.message)
+                Text(data.createdAtRelative)
+            }
         }
         .navigationTitle("Comentários")
         .navigationBarTitleDisplayMode(.inline)

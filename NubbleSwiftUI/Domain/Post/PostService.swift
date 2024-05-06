@@ -10,10 +10,14 @@ import Foundation
 typealias PostResponse = PageModel<PostModel>
 
 class PostService {
-    var api = PostApi()
+    private let api: PostApi
+    
+    init(api: PostApi = PostApi()) {
+        self.api = api
+    }
     
     func getList(page: Int) async throws -> PostResponse {
-        let response = try await api.getList(for: PageParamsModel(page: page, per_page: 10))
+        let response = try await api.getList(PageParamsModel(page: page, per_page: 10))
         
         let meta = ApiAdapter.toMetaDataPageModel(from: response.meta)
         let data = response.data.map { PostAdapter.toPostModel(from: $0) }
