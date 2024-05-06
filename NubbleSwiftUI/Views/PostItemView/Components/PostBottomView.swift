@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct PostBottomView: View {
+    @EnvironmentObject var router: Router
+    
     let postAuthorUsername: String
     let postText: String
     let postCommentCount: Int
+    let postId: Int
     
-    private func getCommentText() -> String? {
+    func getCommentText() -> String? {
         if postCommentCount == 0 { return nil }
         
         if postCommentCount == 1 {
@@ -20,6 +23,10 @@ struct PostBottomView: View {
         }
         
         return "ver \(postCommentCount) comentários"
+    }
+    
+    func navigateToCommentsScreen() {
+        router.navigate(to: .postCommentScreen(postId: postId))
     }
     
     var body: some View {
@@ -33,14 +40,19 @@ struct PostBottomView: View {
                 .foregroundStyle(.secondary)
             
             if let commentText = getCommentText() {
-                Text(commentText)
-                    .font(.system(size: 14, weight: .bold))
-                    .padding(.top, 8)
+                Button {
+                    navigateToCommentsScreen()
+                } label: {
+                    Text(commentText)
+                        .font(.system(size: 14, weight: .bold))
+                }
+                .foregroundStyle(.foreground)
+                .padding(.top, 8)
             }
         }
     }
 }
 
 #Preview {
-    PostBottomView(postAuthorUsername: "mariajulia", postText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut est.", postCommentCount: 22)
+    PostBottomView(postAuthorUsername: "mariajulia", postText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut est.", postCommentCount: 22, postId: 1)
 }

@@ -25,7 +25,11 @@ struct PostItemView: View {
                     commentCount: post.commentCount,
                     favoriteCount: post.favoriteCount)
                 
-                PostBottomView(postAuthorUsername: post.author.username, postText: post.text, postCommentCount: post.commentCount)
+                PostBottomView(
+                    postAuthorUsername: post.author.username,
+                    postText: post.text,
+                    postCommentCount: post.commentCount,
+                    postId: post.id)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top, 16)

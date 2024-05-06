@@ -11,7 +11,8 @@ import SwiftUI
 struct NubbleSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            Routes()
+                .ignoresSafeArea()
         }
     }
 }

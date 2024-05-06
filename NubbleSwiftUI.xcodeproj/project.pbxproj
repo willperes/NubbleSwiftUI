@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6A5FDB2BE907AA00660F4D /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A5FDA2BE907AA00660F4D /* Routes.swift */; };
+		3A6A5FDD2BE9081200660F4D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A5FDC2BE9081200660F4D /* Router.swift */; };
+		3A6A5FE02BE90ADA00660F4D /* PostCommentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A5FDF2BE90ADA00660F4D /* PostCommentScreen.swift */; };
 		3A7F317B2BE84812007D9209 /* NubbleSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F317A2BE84812007D9209 /* NubbleSwiftUIApp.swift */; };
 		3A7F317F2BE84813007D9209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F317E2BE84813007D9209 /* Assets.xcassets */; };
 		3A7F31822BE84813007D9209 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F31812BE84813007D9209 /* Preview Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A6A5FDA2BE907AA00660F4D /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		3A6A5FDC2BE9081200660F4D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		3A6A5FDF2BE90ADA00660F4D /* PostCommentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentScreen.swift; sourceTree = "<group>"; };
 		3A7F31772BE84812007D9209 /* NubbleSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NubbleSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7F317A2BE84812007D9209 /* NubbleSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NubbleSwiftUIApp.swift; sourceTree = "<group>"; };
 		3A7F317E2BE84813007D9209 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,10 +80,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A6A5FD92BE9079400660F4D /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				3A6A5FDA2BE907AA00660F4D /* Routes.swift */,
+				3A6A5FDC2BE9081200660F4D /* Router.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		3A6A5FDE2BE90AD000660F4D /* PostComentScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3A6A5FDF2BE90ADA00660F4D /* PostCommentScreen.swift */,
+			);
+			path = PostComentScreen;
+			sourceTree = "<group>";
+		};
 		3A7F316E2BE84812007D9209 = {
 			isa = PBXGroup;
 			children = (
 				3A7F31792BE84812007D9209 /* NubbleSwiftUI */,
+				3A7F317A2BE84812007D9209 /* NubbleSwiftUIApp.swift */,
 				3A7F31782BE84812007D9209 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,15 +117,15 @@
 		3A7F31792BE84812007D9209 /* NubbleSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				3AC0DA012BE851000001D9E3 /* Utils */,
 				3A7F31882BE8487D007D9209 /* Api */,
-				3A7F31B32BE84B48007D9209 /* Views */,
 				3A7F31902BE8487D007D9209 /* Domain */,
 				3A7F31A12BE8487D007D9209 /* Models */,
-				3A7F319C2BE8487D007D9209 /* Screens */,
-				3A7F317A2BE84812007D9209 /* NubbleSwiftUIApp.swift */,
-				3A7F317E2BE84813007D9209 /* Assets.xcassets */,
 				3A7F31802BE84813007D9209 /* Preview Content */,
+				3A6A5FD92BE9079400660F4D /* Routes */,
+				3A7F319C2BE8487D007D9209 /* Screens */,
+				3AC0DA012BE851000001D9E3 /* Utils */,
+				3A7F31B32BE84B48007D9209 /* Views */,
+				3A7F317E2BE84813007D9209 /* Assets.xcassets */,
 			);
 			path = NubbleSwiftUI;
 			sourceTree = "<group>";
@@ -192,6 +216,7 @@
 		3A7F319D2BE8487D007D9209 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				3A6A5FDE2BE90AD000660F4D /* PostComentScreen */,
 				3A7F319E2BE8487D007D9209 /* HomeScreen */,
 			);
 			path = App;
@@ -330,6 +355,7 @@
 			files = (
 				3A7F31A42BE8487D007D9209 /* ApiManager.swift in Sources */,
 				3AC0DA0A2BE867360001D9E3 /* PostBottomView.swift in Sources */,
+				3A6A5FDD2BE9081200660F4D /* Router.swift in Sources */,
 				3A7F317B2BE84812007D9209 /* NubbleSwiftUIApp.swift in Sources */,
 				3AC0DA082BE866500001D9E3 /* PostActionsView.swift in Sources */,
 				3A7F31B02BE8487D007D9209 /* HomeScreenViewModel.swift in Sources */,
@@ -344,7 +370,9 @@
 				3AC0DA032BE851140001D9E3 /* ImageCache.swift in Sources */,
 				3A7F31AF2BE8487D007D9209 /* UserApiModel.swift in Sources */,
 				3A7F31A62BE8487D007D9209 /* PageApiModel.swift in Sources */,
+				3A6A5FDB2BE907AA00660F4D /* Routes.swift in Sources */,
 				3A7F31A72BE8487D007D9209 /* ApiAdapter.swift in Sources */,
+				3A6A5FE02BE90ADA00660F4D /* PostCommentScreen.swift in Sources */,
 				3A7F31A92BE8487D007D9209 /* PostService.swift in Sources */,
 				3A7F31AA2BE8487D007D9209 /* PostApiModel.swift in Sources */,
 				3A7F31A82BE8487D007D9209 /* ApiEndpoint.swift in Sources */,

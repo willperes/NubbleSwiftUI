@@ -8,23 +8,25 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @State private var viewModel = HomeScreenViewModel(postService: PostService())
+    @State private var viewModel = HomeScreenViewModel()
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                ForEach(viewModel.posts) { post in
-                    PostItemView(post: post)
-                        .padding(.vertical, 14)
-                }
+        ScrollView {
+            ForEach(viewModel.posts) { post in
+                PostItemView(post: post)
+                    .padding(.vertical, 14)
             }
-            
-            .navigationTitle("Posts")
-            .onAppear {
-                Task {
-                    await viewModel.loadPosts()
-                }
+        }
+        
+        .navigationTitle("Posts")
+        .navigationBarBackButtonHidden()
+        .onAppear {
+            Task {
+                await viewModel.loadPosts()
             }
+        }
+        .onTapGesture {
+            //
         }
     }
 }

@@ -12,7 +12,7 @@ class HomeScreenViewModel {
     private let postService: PostService
     var posts: [PostModel] = []
     
-    init(postService: PostService) {
+    init(postService: PostService = PostService()) {
         self.postService = postService
     }
     
