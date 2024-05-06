@@ -11,16 +11,19 @@ struct HomeScreen: View {
     @State private var viewModel = HomeScreenViewModel(postService: PostService())
     
     var body: some View {
-        VStack {
-            Text("Olá, bem vindo(a)!")
-            
-            ForEach(viewModel.posts) { post in
-                Text(post.text)
+        NavigationStack {
+            ScrollView {
+                ForEach(viewModel.posts) { post in
+                    PostItemView(post: post)
+                        .padding(.vertical, 14)
+                }
             }
-        }
-        .onAppear {
-            Task {
-                await viewModel.loadPosts()
+            
+            .navigationTitle("Posts")
+            .onAppear {
+                Task {
+                    await viewModel.loadPosts()
+                }
             }
         }
     }
