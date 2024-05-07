@@ -18,7 +18,7 @@ Nubble App is a social network application where users can share photos with one
 
 ## Demo
 
-https://github.com/willperes/NubbleSwiftUI/assets/64440935/bb807861-da5b-4e7b-9eb3-ea8736440f7f
+https://github.com/willperes/NubbleSwiftUI/assets/64440935/7cf6aa14-95a7-444e-b89f-022d4f10f225
 
 ## Technologies
 
