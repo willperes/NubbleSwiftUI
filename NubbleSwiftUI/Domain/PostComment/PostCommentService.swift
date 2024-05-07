@@ -17,7 +17,7 @@ class PostCommentService {
     }
     
     func getList(postId: Int, page: Int) async throws -> PostCommentResponse {
-        let response = try await api.getList(postId, PageParamsModel(page: page, per_page: 15))
+        let response = try await api.getList(postId, PageParamsModel(page: page, per_page: 20))
         
         let meta = ApiAdapter.toMetaDataPageModel(from: response.meta)
         let data = response.data.map { PostCommentAdapter.toPosCommenttModel(from: $0) }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RemoteImage: View {
+struct RemoteImageView: View {
     @ObservedObject var imageLoader: ImageLoader
     
     init(url: String) {

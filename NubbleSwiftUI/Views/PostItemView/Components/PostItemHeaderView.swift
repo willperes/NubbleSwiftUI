@@ -12,10 +12,7 @@ struct PostItemHeaderView: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            RemoteImage(url: postAuthor.profileURL)
-                .frame(width: 32, height: 32)
-                .aspectRatio(contentMode: .fit)
-                .clipShape(RoundedRectangle(cornerRadius: 14))
+            ProfileAvatarView(profileURL: postAuthor.profileURL, size: 32, cornerRadius: 14)
             
             Text(postAuthor.username)
                 .padding(.leading, 12)

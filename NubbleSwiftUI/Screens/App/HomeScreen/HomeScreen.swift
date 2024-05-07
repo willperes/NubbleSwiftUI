@@ -16,6 +16,7 @@ struct HomeScreen: View {
                 PostItemView(post: viewModel.data[i])
                     .padding(.vertical, 14)
                     .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
                     .onAppear {
                         viewModel.shouldFetchMore(index: i)
                     }

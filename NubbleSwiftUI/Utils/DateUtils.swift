@@ -26,32 +26,32 @@ struct DateUtils {
         }
         
         if diffInSeconds < 60 {
-            return "\(diffInSeconds) s"
+            return "\(Int(diffInSeconds)) s"
         }
         
         let diffInMinutes = round(diffInSeconds / 60)
         if diffInMinutes < 60 {
-            return "\(diffInMinutes) m"
+            return "\(Int(diffInMinutes)) m"
         }
         
         let diffInHours = floor(diffInMinutes / 60)
         if diffInHours < 24 {
-            return "\(diffInHours) h"
+            return "\(Int(diffInHours)) h"
         }
         
         let diffInDays = floor(diffInHours / 24)
         if diffInDays < 7 {
-            return "\(diffInDays) d"
+            return "\(Int(diffInDays)) d"
         }
         
         let diffInWeeks = floor(diffInDays / 7)
         if diffInWeeks <= 4 {
-            return "\(diffInWeeks) sem"
+            return "\(Int(diffInWeeks)) sem"
         }
         
         let diffInMonths = floor(diffInDays / 30)
         if diffInMonths < 12 {
-            return "\(diffInMonths) mes"
+            return "\(Int(diffInMonths)) mes"
         }
         
         return date.formatted(.dateTime.day(.twoDigits).month(.twoDigits).year(.extended()))

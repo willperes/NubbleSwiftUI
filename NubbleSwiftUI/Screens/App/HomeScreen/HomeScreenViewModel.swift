@@ -22,7 +22,6 @@ class HomeScreenViewModel: ObservableObject {
     }
     
     func shouldFetchMore(index: Int) {
-        print("\(index) \(data.count - 1)")
         if index == data.count - 1 {
             Task {
                 await fetchMoreData()

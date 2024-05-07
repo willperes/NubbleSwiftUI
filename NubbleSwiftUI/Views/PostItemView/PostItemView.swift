@@ -14,7 +14,7 @@ struct PostItemView: View {
         VStack(spacing: 0) {
             PostItemHeaderView(postAuthor: post.author)
             
-            RemoteImage(url: post.imageURL)
+            RemoteImageView(url: post.imageURL)
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 260)
                 .clipped()
