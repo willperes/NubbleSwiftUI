@@ -23,13 +23,13 @@ Nubble App is a social network application where users can share photos with one
   <img src="https://i.imgur.com/fldFHKp.png" alt="Home screen containing other user's posts" height="450" />
   <img src="https://i.imgur.com/5o39C7K.png" alt="Scrolled home screen containing other user's posts" height="450" />
   <br/>
-  <img src="https://i.imgur.com/Fm6S8Ha.png" alt="Comments screen showing the comments from an user's post" height="450" />
-  <img src="https://i.imgur.com/Hp5f5ab.png" alt="Scrolled comments screen showing the comments from an user's post" height="450" />
+  <img src="https://i.imgur.com/Rwqrmiu.png" alt="Comments screen showing the comments from an user's post" height="450" />
+  <img src="https://i.imgur.com/6dnosii.png" alt="Scrolled comments screen showing the comments from an user's post" height="450" />
 </div>
 
 ## Demo
 
-https://github.com/willperes/NubbleSwiftUI/assets/64440935/ca6641a3-51c1-4f4f-bb5d-763f84aecb6c
+https://github.com/willperes/NubbleSwiftUI/assets/64440935/deddbf56-0ee2-4dc2-8c1d-1615b8af3948
 
 ## Technologies
 
