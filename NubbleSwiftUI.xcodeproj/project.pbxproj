@@ -46,6 +46,7 @@
 		3AC0DA0A2BE867360001D9E3 /* PostBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0DA092BE867360001D9E3 /* PostBottomView.swift */; };
 		3ACEDA952BEAC683005B088E /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEDA942BEAC683005B088E /* AppTab.swift */; };
 		3ACEDA9A2BEAC9B6005B088E /* HomeNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEDA992BEAC9B6005B088E /* HomeNavigationStack.swift */; };
+		3AE9FB512BEBE11B00885C21 /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9FB502BEBE11B00885C21 /* TextMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		3AC0DA092BE867360001D9E3 /* PostBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBottomView.swift; sourceTree = "<group>"; };
 		3ACEDA942BEAC683005B088E /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		3ACEDA992BEAC9B6005B088E /* HomeNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationStack.swift; sourceTree = "<group>"; };
+		3AE9FB502BEBE11B00885C21 /* TextMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 		3A7F31B32BE84B48007D9209 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3AE9FB4F2BEBE11400885C21 /* TextMessageView */,
 				3A7A16402BE9A19A00C032D6 /* PostCommentItemView */,
 				3A7A163D2BE9A05900C032D6 /* ProfileAvatarView */,
 				3AC0D9FE2BE84FE20001D9E3 /* RemoteImageView */,
@@ -370,6 +373,14 @@
 				3ACEDA992BEAC9B6005B088E /* HomeNavigationStack.swift */,
 			);
 			path = NavigationStacks;
+			sourceTree = "<group>";
+		};
+		3AE9FB4F2BEBE11400885C21 /* TextMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				3AE9FB502BEBE11B00885C21 /* TextMessageView.swift */,
+			);
+			path = TextMessageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +488,7 @@
 				3A7F31AD2BE8487D007D9209 /* PostDataSource.swift in Sources */,
 				3AA0B1F32BE984BB00453654 /* PostCommentAdapter.swift in Sources */,
 				3A7F31AB2BE8487D007D9209 /* PostModel.swift in Sources */,
+				3AE9FB512BEBE11B00885C21 /* TextMessageView.swift in Sources */,
 				3A7A163F2BE9A07000C032D6 /* ProfileAvatarView.swift in Sources */,
 				3A7F31AE2BE8487D007D9209 /* PostAdapter.swift in Sources */,
 			);

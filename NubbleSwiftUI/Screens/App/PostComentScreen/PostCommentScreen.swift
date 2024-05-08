@@ -17,16 +17,14 @@ struct PostCommentScreen: View {
     }
     
     var body: some View {
-        List {
-            ForEach(viewModel.data.indices, id: \.self) { i in
-                PostCommentItemView(postComment: viewModel.data[i])
-                    .padding(.vertical, 8)
-                    .listRowInsets(EdgeInsets())
-                    .listRowSeparator(.hidden)
-                    .onAppear {
-                        viewModel.shouldFetchMore(index: i)
-                    }
-            }
+        List(viewModel.data.indices, id: \.self) { i in
+            PostCommentItemView(postComment: viewModel.data[i])
+                .padding(.vertical, 8)
+                .listRowInsets(EdgeInsets())
+                .listRowSeparator(.hidden)
+                .onAppear {
+                    viewModel.shouldFetchMore(index: i)
+                }
         }
         .overlay {
             if viewModel.isLoading {
@@ -38,5 +36,17 @@ struct PostCommentScreen: View {
         .navigationTitle("Comentários")
         .navigationBarTitleDisplayMode(.inline)
         .toolbarRole(.editor)
+        
+        VStack(spacing: 0) {
+            TextMessageView {
+                print("Message submited")
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.bottom, 16)
     }
+}
+
+#Preview {
+    PostCommentScreen(postId: 1)
 }
