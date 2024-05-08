@@ -22,6 +22,7 @@ Nubble App is a social network application where users can share photos with one
 <div style="flex-direction: row;">
   <img src="https://i.imgur.com/fldFHKp.png" alt="Home screen containing other user's posts" height="450" />
   <img src="https://i.imgur.com/5o39C7K.png" alt="Scrolled home screen containing other user's posts" height="450" />
+  <br/>
   <img src="https://i.imgur.com/Fm6S8Ha.png" alt="Comments screen showing the comments from an user's post" height="450" />
   <img src="https://i.imgur.com/Hp5f5ab.png" alt="Scrolled comments screen showing the comments from an user's post" height="450" />
 </div>
