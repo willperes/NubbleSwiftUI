@@ -48,15 +48,6 @@ enum AppTab: Hashable, Identifiable, CaseIterable {
             }
         }
     }
-    
-    var navigationTitle: String {
-        switch self {
-        case .home: "Início"
-        case .newPost: "Novo post"
-        case .bookmarks: "Favoritos"
-        case .myProfile: "Meu perfil"
-        }
-    }
 }
 
 struct AppTabScreen: View {
@@ -71,6 +62,5 @@ struct AppTabScreen: View {
             }
         }
         .environmentObject(router)
-        .navigationTitle(router.selectedTab.navigationTitle)
     }
 }
