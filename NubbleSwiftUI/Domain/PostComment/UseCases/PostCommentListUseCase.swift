@@ -7,31 +7,32 @@
 
 import Foundation
 
-class PostCommentListUseCase {
+final public class PostCommentListUseCase {
     typealias FetchCompletion = ([PostCommentModel]?, _ skipped: Bool?, Error?) -> Void
     
-    private let postCommentService: PostCommentService
+    private let repository: PostCommentRepository
     private var page = 1
     private var hasNextPage = true
     
-    init(postCommentService: PostCommentService = PostCommentService()) {
-        self.postCommentService = postCommentService
+    init(repository: PostCommentRepository) {
+        self.repository = repository
     }
     
     @MainActor
     func fetchInitialData(_ postId: Int, completion: @escaping FetchCompletion) async {
-        do {
-            let response = try await postCommentService.getList(postId: postId, page: page)
+        await repository.getList(postId: postId, page: page) { response, error in
+            guard let response = response, error == nil else {
+                completion(nil, nil, error)
+                return
+            }
             
             if response.meta.hasNextPage {
-                page = 2
+                self.page = 2
             } else {
-                hasNextPage = false
+                self.hasNextPage = false
             }
             
             completion(response.data, nil, nil)
-        } catch {
-            completion(nil, nil, error)
         }
     }
     
@@ -42,18 +43,19 @@ class PostCommentListUseCase {
             return
         }
         
-        do {
-            let response = try await postCommentService.getList(postId: postId, page: page)
+        await repository.getList(postId: postId, page: page) { response, error in
+            guard let response = response, error == nil else {
+                completion(nil, nil, error)
+                return
+            }
             
             if response.meta.hasNextPage {
-                page = page + 1
+                self.page = self.page + 1
             } else {
-                hasNextPage = false
+                self.hasNextPage = false
             }
             
             completion(response.data, nil, nil)
-        } catch {
-            completion(nil, nil, error)
         }
     }
 }

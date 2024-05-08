@@ -7,31 +7,32 @@
 
 import Foundation
 
-class PostListUseCase {
+final public class PostListUseCase {
     typealias FetchCompletion = ([PostModel]?, _ skipped: Bool?, Error?) -> Void
     
-    private let postService: PostService
+    private let repository: PostRepository
     private var page = 1
     private var hasNextPage = true
     
-    init(postService: PostService = PostService()) {
-        self.postService = postService
+    init(repository: PostRepository) {
+        self.repository = repository
     }
     
     @MainActor
     func fetchInitialData(completion: @escaping FetchCompletion) async {
-        do {
-            let response = try await postService.getList(page: page)
+        await repository.getList(page: page) { response, error in
+            guard let response = response, error == nil else {
+                completion(nil, nil, error)
+                return
+            }
             
             if response.meta.hasNextPage {
-                page = 2
+                self.page = 2
             } else {
-                hasNextPage = false
+                self.hasNextPage = false
             }
             
             completion(response.data, nil, nil)
-        } catch {
-            completion(nil, nil, error)
         }
     }
     
@@ -42,18 +43,19 @@ class PostListUseCase {
             return
         }
         
-        do {
-            let response = try await postService.getList(page: page)
+        await repository.getList(page: page) { response, error in
+            guard let response = response, error == nil else {
+                completion(nil, nil, error)
+                return
+            }
             
             if response.meta.hasNextPage {
-                page = page + 1
+                self.page = self.page + 1
             } else {
-                hasNextPage = false
+                self.hasNextPage = false
             }
             
             completion(response.data, nil, nil)
-        } catch {
-            completion(nil, nil, error)
         }
     }
 }

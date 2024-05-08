@@ -9,7 +9,7 @@ import Foundation
 
 class PostCommentScreenViewModel: ObservableObject {
     private let postId: Int
-    private let useCase = PostCommentListUseCase()
+    private let useCase = PostCommentListUseCase(repository: PostCommentDataSource())
     
     @Published var data: [PostCommentModel] = []
     @Published var isLoading = true

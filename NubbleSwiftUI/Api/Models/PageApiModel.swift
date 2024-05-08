@@ -1,5 +1,5 @@
 //
-//  PageApiModel.swift
+//  PageResponseDTO.swift
 //  NubbleSwiftUI
 //
 //  Created by Willian Peres on 05/05/24.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct PageApiModel<D: Decodable>: Decodable {
-    let meta: MetaDataPageApiModel
+struct PageResponseDTO<D: Decodable>: Decodable {
+    let meta: MetaDataPageResponseDTO
     let data: [D]
 }
 
-struct MetaDataPageApiModel: Decodable {
+struct MetaDataPageResponseDTO: Decodable {
     let total: Int
     let per_page: Int
     let current_page: Int

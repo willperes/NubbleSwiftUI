@@ -1,5 +1,5 @@
 //
-//  PostCommentApiModel.swift
+//  PostCommentResponseDTO.swift
 //  NubbleSwiftUI
 //
 //  Created by Willian Peres on 06/05/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PostCommentApiModel: Decodable {
+struct PostCommentResponseDTO: Decodable {
     let id: Int
     let message: String
     let user_id: Int

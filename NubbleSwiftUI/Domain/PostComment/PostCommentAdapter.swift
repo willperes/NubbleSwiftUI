@@ -8,18 +8,18 @@
 import Foundation
 
 class PostCommentAdapter {
-    static func toPosCommenttModel(from apiModel: PostCommentApiModel) -> PostCommentModel {
+    static func toPostCommentModel(from dto: PostCommentResponseDTO) -> PostCommentModel {
         let author = PostCommentModel.Author(
-            id: apiModel.user.id,
-            profileURL: apiModel.user.profile_url,
-            name: apiModel.user.full_name,
-            username: apiModel.user.username)
+            id: dto.user.id,
+            profileURL: dto.user.profile_url,
+            name: dto.user.full_name,
+            username: dto.user.username)
         
         let postComment = PostCommentModel(
-            id: apiModel.id,
-            message: apiModel.message,
-            createdAt: apiModel.created_at,
-            createdAtRelative: DateUtils().formatRelative(from: apiModel.created_at) ?? "",
+            id: dto.id,
+            message: dto.message,
+            createdAt: dto.created_at,
+            createdAtRelative: DateUtils().formatRelative(from: dto.created_at) ?? "",
             author: author)
         
         return postComment

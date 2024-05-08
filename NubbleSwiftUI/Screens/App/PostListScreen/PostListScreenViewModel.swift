@@ -8,7 +8,7 @@
 import SwiftUI
 
 class PostListScreenViewModel: ObservableObject {
-    private let useCase = PostListUseCase()
+    private let useCase = PostListUseCase(repository: PostDataSource())
     
     @Published var data: [PostModel] = []
     @Published var isLoading = true

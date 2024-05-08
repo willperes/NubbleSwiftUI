@@ -1,5 +1,5 @@
 //
-//  PostApiModel.swift
+//  PostResponseDTO.swift
 //  NubbleSwiftUI
 //
 //  Created by Willian Peres on 05/05/24.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct PostMetaApiModel: Decodable {
+struct PostMetaResponseDTO: Decodable {
     let like_count: String
     let favorite_count: String
     let comments_count: String
 }
 
-struct PostApiModel: Decodable {
+struct PostResponseDTO: Decodable {
     let id: Int
     let text: String
     let user_id: Int
@@ -23,7 +23,7 @@ struct PostApiModel: Decodable {
     let created_at: String
     let updated_at: String
     let status: String
-    let meta: PostMetaApiModel
+    let meta: PostMetaResponseDTO
     
     let user: UserApiModel
 }

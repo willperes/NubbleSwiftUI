@@ -8,21 +8,21 @@
 import Foundation
 
 class PostAdapter {
-    static func toPostModel(from apiModel: PostApiModel) -> PostModel {
+    static func toPostModel(from dto: PostResponseDTO) -> PostModel {
         let postModelAuthor = PostModel.Author(
-            id: apiModel.user.id,
-            profileURL: apiModel.user.profile_url,
-            name: apiModel.user.full_name,
-            username: apiModel.user.username
+            id: dto.user.id,
+            profileURL: dto.user.profile_url,
+            name: dto.user.full_name,
+            username: dto.user.username
         )
         let postModel = PostModel(
-            id: apiModel.id,
-            text: apiModel.text,
+            id: dto.id,
+            text: dto.text,
             author: postModelAuthor,
-            imageURL: apiModel.image_url,
-            reactionCount: Int(apiModel.meta.like_count)!,
-            commentCount: Int(apiModel.meta.comments_count)!,
-            favoriteCount: Int(apiModel.meta.favorite_count)!
+            imageURL: dto.image_url,
+            reactionCount: Int(dto.meta.like_count)!,
+            commentCount: Int(dto.meta.comments_count)!,
+            favoriteCount: Int(dto.meta.favorite_count)!
         )
         
         return postModel
