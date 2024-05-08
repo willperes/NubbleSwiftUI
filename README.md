@@ -7,6 +7,7 @@ This is a project developed inspired in the React Native version from the course
 ## Table of Content:
 
 - [About The App](#about-the-app)
+- [Screenshots](#screenshots)
 - [Demo](#demo)
 - [Technologies](#technologies)
 - [Folder Structure](#folder-structure)
@@ -16,9 +17,18 @@ This is a project developed inspired in the React Native version from the course
 
 Nubble App is a social network application where users can share photos with one another, follow other people, like and comment their photos.
 
+## Screenshots
+
+<div style="flex-direction: row;">
+  <img src="https://i.imgur.com/fldFHKp.png" alt="Home screen containing other user's posts" height="450" />
+  <img src="https://i.imgur.com/5o39C7K.png" alt="Scrolled home screen containing other user's posts" height="450" />
+  <img src="https://i.imgur.com/Fm6S8Ha.png" alt="Comments screen showing the comments from an user's post" height="450" />
+  <img src="https://i.imgur.com/Hp5f5ab.png" alt="Scrolled comments screen showing the comments from an user's post" height="450" />
+</div>
+
 ## Demo
 
-https://github.com/willperes/NubbleSwiftUI/assets/64440935/7cf6aa14-95a7-444e-b89f-022d4f10f225
+https://github.com/willperes/NubbleSwiftUI/assets/64440935/ca6641a3-51c1-4f4f-bb5d-763f84aecb6c
 
 ## Technologies
 
