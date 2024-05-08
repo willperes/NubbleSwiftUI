@@ -7,22 +7,32 @@
 
 import SwiftUI
 
-final class Router: ObservableObject {
+class Router: ObservableObject {
+    @Published var selectedTab: AppTab = .home
+    
+    @Published var routes = [Destination]()
+    
     public enum Destination: Codable, Hashable {
         case postCommentScreen(postId: Int)
     }
     
-    @Published var navPath = NavigationPath()
-    
     func navigate(to destination: Destination) -> Void {
-        navPath.append(destination)
+        guard !routes.contains(destination) else {
+            if let destinationIndex = routes.firstIndex(of: destination) {
+                routes = Array(routes.prefix(through: destinationIndex))
+            }
+            
+            return
+        }
+        
+        routes.append(destination)
     }
     
     func goBack() {
-        navPath.removeLast()
+        routes.removeLast()
     }
     
     func navigateToRoot() {
-        navPath.removeLast(navPath.count)
+        routes = []
     }
 }

@@ -25,10 +25,6 @@ struct PostBottomView: View {
         return "ver \(postCommentCount) comentários"
     }
     
-    func navigateToCommentsScreen() {
-        router.navigate(to: .postCommentScreen(postId: postId))
-    }
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(postAuthorUsername)
@@ -41,7 +37,7 @@ struct PostBottomView: View {
             
             if let commentText = getCommentText() {
                 Button {
-                    navigateToCommentsScreen()
+                    router.navigate(to: .postCommentScreen(postId: postId))
                 } label: {
                     Text(commentText)
                         .font(.system(size: 14, weight: .bold))
