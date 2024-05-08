@@ -16,10 +16,14 @@ struct PostCommentItemView: View {
             
             VStack(alignment: .leading, spacing: 0) {
                 Text(postComment.author.username)
-                    .font(.system(size: 14, weight: .medium))
+                    .font(.footnote)
+                    .fontWeight(.bold)
+                    .fontWeight(.medium)
+                    .padding(.bottom, 4)
                 
                 Text("\(postComment.message) - \(postComment.createdAtRelative)")
-                    .font(.system(size: 14, weight: .medium))
+                    .font(.footnote)
+                    .fontWeight(.medium)
                     .foregroundStyle(.secondary)
             }
             .padding(.leading, 12)

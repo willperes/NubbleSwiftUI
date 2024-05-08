@@ -17,7 +17,7 @@ struct PostActionsView: View {
             HStack(spacing: 0) {
                 Image(systemName: "heart.fill")
                     .foregroundColor(.red)
-                    .font(.system(size: 20))
+                    .font(.title3)
                 Text(String(reactionCount))
                     .padding(.leading, 4)
             }
@@ -25,7 +25,7 @@ struct PostActionsView: View {
             
             HStack(spacing: 0) {
                 Image(systemName: "message")
-                    .font(.system(size: 20))
+                    .font(.title3)
                 Text(String(commentCount))
                     .padding(.leading, 4)
             }
@@ -33,7 +33,7 @@ struct PostActionsView: View {
             
             HStack(spacing: 0) {
                 Image(systemName: "bookmark")
-                    .font(.system(size: 20))
+                    .font(.title3)
                 Text(String(favoriteCount))
                     .padding(.leading, 4)
             }

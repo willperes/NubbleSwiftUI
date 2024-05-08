@@ -15,6 +15,7 @@ struct PostItemHeaderView: View {
             ProfileAvatarView(profileURL: postAuthor.profileURL, size: 32, cornerRadius: 14)
             
             Text(postAuthor.username)
+                .font(.callout)
                 .padding(.leading, 12)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

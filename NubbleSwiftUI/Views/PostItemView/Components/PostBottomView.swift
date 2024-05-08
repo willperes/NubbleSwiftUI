@@ -28,11 +28,12 @@ struct PostBottomView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(postAuthorUsername)
-                .font(.system(size: 16, weight: .bold))
+                .font(.callout)
+                .fontWeight(.bold)
                 .padding(.top, 16)
             
             Text(postText)
-                .font(.system(size: 16))
+                .font(.callout)
                 .foregroundStyle(.secondary)
             
             if let commentText = getCommentText() {
@@ -40,7 +41,8 @@ struct PostBottomView: View {
                     router.navigate(to: .postCommentScreen(postId: postId))
                 } label: {
                     Text(commentText)
-                        .font(.system(size: 14, weight: .bold))
+                        .font(.footnote)
+                        .fontWeight(.bold)
                 }
                 .foregroundStyle(.foreground)
                 .padding(.top, 8)
