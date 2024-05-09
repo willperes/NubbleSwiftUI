@@ -1,6 +1,6 @@
 # Nubble App
 
-This is a project developed inspired in the React Native version from the course _"React Native Professional"_ from [Coffstack](https://coffstack.com.br).
+This is a project developed inspired in the React Native version from the course _"[React Native Professional](https://coffstack.com/profissional-react-native/)"_ from [Coffstack](https://coffstack.com.br).
 
 🚧 This project is still in development, so only a few features of it are currently implemented. The README will also be updated as new technologies and featuresare being introduced into this project. 🚧
 
